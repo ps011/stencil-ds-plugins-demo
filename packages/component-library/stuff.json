@@ -1,11 +1,93 @@
 {
-  "timestamp": "2019-12-09T23:57:20",
+  "timestamp": "2020-06-22T11:34:15",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.7.5",
     "typescriptVersion": "3.6.3"
   },
   "components": [
+    {
+      "filePath": "src/components/accordion/accordion.tsx",
+      "encapsulation": "shadow",
+      "tag": "accordion-container",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "heading",
+          "type": "string",
+          "mutable": false,
+          "attr": "heading",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/accordion/accordion-item.tsx",
+      "encapsulation": "shadow",
+      "tag": "accordion-item",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "content",
+          "type": "string",
+          "mutable": false,
+          "attr": "content",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "heading",
+          "type": "string",
+          "mutable": false,
+          "attr": "heading",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
     {
       "filePath": "src/components/demo-component/demo-component.tsx",
       "encapsulation": "shadow",

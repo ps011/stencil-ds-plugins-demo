@@ -13,6 +13,13 @@ import {
 } from './components/demo-component/demo-component';
 
 export namespace Components {
+  interface AccordionContainer {
+    'heading': string;
+  }
+  interface AccordionItem {
+    'content': string;
+    'heading': string;
+  }
   interface DemoComponent {
     'advanced': AdvancedType;
     'max': number;
@@ -24,17 +31,38 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLAccordionContainerElement extends Components.AccordionContainer, HTMLStencilElement {}
+  var HTMLAccordionContainerElement: {
+    prototype: HTMLAccordionContainerElement;
+    new (): HTMLAccordionContainerElement;
+  };
+
+  interface HTMLAccordionItemElement extends Components.AccordionItem, HTMLStencilElement {}
+  var HTMLAccordionItemElement: {
+    prototype: HTMLAccordionItemElement;
+    new (): HTMLAccordionItemElement;
+  };
+
   interface HTMLDemoComponentElement extends Components.DemoComponent, HTMLStencilElement {}
   var HTMLDemoComponentElement: {
     prototype: HTMLDemoComponentElement;
     new (): HTMLDemoComponentElement;
   };
   interface HTMLElementTagNameMap {
+    'accordion-container': HTMLAccordionContainerElement;
+    'accordion-item': HTMLAccordionItemElement;
     'demo-component': HTMLDemoComponentElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface AccordionContainer {
+    'heading'?: string;
+  }
+  interface AccordionItem {
+    'content'?: string;
+    'heading'?: string;
+  }
   interface DemoComponent {
     'advanced'?: AdvancedType;
     'max'?: number;
@@ -44,6 +72,8 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'accordion-container': AccordionContainer;
+    'accordion-item': AccordionItem;
     'demo-component': DemoComponent;
   }
 }
@@ -54,6 +84,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'accordion-container': LocalJSX.AccordionContainer & JSXBase.HTMLAttributes<HTMLAccordionContainerElement>;
+      'accordion-item': LocalJSX.AccordionItem & JSXBase.HTMLAttributes<HTMLAccordionItemElement>;
       'demo-component': LocalJSX.DemoComponent & JSXBase.HTMLAttributes<HTMLDemoComponentElement>;
     }
   }

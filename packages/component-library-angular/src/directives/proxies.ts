@@ -29,6 +29,28 @@ function proxyOutputs(instance: any, el: any, events: string[]) {
 
 import { Components } from 'component-library'
 
+export declare interface AccordionContainer extends Components.AccordionContainer {}
+@Component({ selector: 'accordion-container', changeDetection: 0, template: '<ng-content></ng-content>', inputs: ['heading'] })
+export class AccordionContainer {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+proxyInputs(AccordionContainer, ['heading']);
+
+export declare interface AccordionItem extends Components.AccordionItem {}
+@Component({ selector: 'accordion-item', changeDetection: 0, template: '<ng-content></ng-content>', inputs: ['content', 'heading'] })
+export class AccordionItem {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+proxyInputs(AccordionItem, ['content', 'heading']);
+
 export declare interface DemoComponent extends Components.DemoComponent {}
 @Component({ selector: 'demo-component', changeDetection: 0, template: '<ng-content></ng-content>', inputs: ['advanced', 'max', 'min', 'value'] })
 export class DemoComponent {

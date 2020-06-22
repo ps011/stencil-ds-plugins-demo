@@ -3,5 +3,7 @@
 import { createReactComponent } from './react-component-lib';
 import { defineCustomElements, applyPolyfills } from 'component-library/loader';
 applyPolyfills().then(() => { defineCustomElements(window); });
+export const AccordionContainer = createReactComponent('accordion-container');
+export const AccordionItem = createReactComponent('accordion-item');
 export const DemoComponent = createReactComponent('demo-component');
 //# sourceMappingURL=components.js.map

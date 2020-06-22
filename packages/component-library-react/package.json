@@ -34,7 +34,7 @@
     "typescript": "^3.3.4000"
   },
   "dependencies": {
-    "component-library": "^0.0.1"
+    "component-library": "../component-library"
   },
   "peerDependencies": {
     "react": "^16.7.0",
